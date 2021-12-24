@@ -26,20 +26,20 @@
         </h1>
       </div>
       <div class="block md:grid grid-cols-3 container max-w-6xl mx-auto gap-0 md:gap-8">
-        <div class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg uber border-8">
+        <div data-aos="fade-up" data-aos-duration="1000"  class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg uber border-8">
           <img src="../assets/uber.png" class="w-auto md:w-40 mx-auto" alt="" />
         </div>
-        <div class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg border-8 border-yellow-300 hover:border-yellow-400">
+        <div data-aos="fade-down" data-aos-duration="1000" class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg border-8 border-yellow-300 hover:border-yellow-400">
           <img src="../assets/takeaway.svg" class="w-1/2 md:w-20 mx-auto" alt="" />
           <h1 class="text-center text-xl mt-3 font-bold">TakeAway</h1>
         </div>
-        <div class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg border-8 border-green-300 hover:border-green-400">
+        <div data-aos="fade-up" data-aos-duration="1000" class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg border-8 border-green-300 hover:border-green-400">
           <img src="../assets/deliveroo.png" class="w-1/2 md:w-20 mx-auto" alt="" />
           <h1 class="text-center text-xl mt-3 font-bold">Deliveroo</h1>
         </div>
       </div>
 
-      <div id="menu" class="bg-red-600 mt-3 md:mt-16 min-h-screen">
+      <div id="menu" class=" mt-3 md:mt-16 min-h-screen">
         <div class="container max-w-6xl mx-auto">
           <h1 class="text-lg md:text-4xl text-white pt-24 font-bold font-serif uppercase">
             🍕🍅🌿🧅"à table !"🧅🌿🍅🍕
@@ -47,7 +47,7 @@
           <br />
         </div>
         <div class="mx-auto mt-6 px-4 md:px-0">
-          <div v-for="(pizza, index) in menu" v-bind:key="index" class=" mb-6">
+          <div :data-aos-delay="index*300" data-aos="flip-up" data-aos-duration="1000" v-for="(pizza, index) in menu" v-bind:key="index" class=" mb-6">
             <div class="bg-white w-full pb-5 md:pb-0 h-full md:h-48 text-left shadow-lg relative">
               <img
                 v-if="isOdd(index)"
@@ -84,7 +84,7 @@
           </h1>
           <br />
           <p class="font-serif px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="grid grid-cols-3 justify-center justify-items-center w-64 mx-auto mt-5">
+          <div data-aos="fade-up" class="grid grid-cols-3 justify-center justify-items-center w-64 mx-auto mt-5">
             <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'facebook']" />
             <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'twitter']" />
             <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'instagram']" />
