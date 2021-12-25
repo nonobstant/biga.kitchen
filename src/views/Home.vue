@@ -7,8 +7,8 @@
         <img src="../assets/pizza.png" class="w-4/12 mx-auto mt-6" alt="" />
         <h1 class="inline-block p-5 text-white">
           <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-          <span class="font-bold">04 01 23 45 67</span> <br />
-          <span class="font-bold">+32 401 23 45 67</span>
+          <a href="tel:0401234567" class="font-bold">04 01 23 45 67</a> <br />
+          <a href="tel:+32401234567" class="font-bold">+32 401 23 45 67</a>
           <div class=" bg-green-700 dark:bg-sunset-700 pt-px pb-1 px-2 rounded-lg mt-2 border-4 border-green-300 dark:border-sunset-300 shadow-lg">
             <span v-if="shop.status" class="font-bold text-white text-lg"
               >Ouvert</span
@@ -95,7 +95,7 @@
             est une <span class="font-bold">"ghost kitchen"</span> qui a pour
             projet de livrer des pizzas traditionnelles faites avec un savoir à
             l'italienne. La spécialité de nos pizzas est le <span class="font-bold">biga</span>,
-            Une technique de préparation qui ajoute de la compléxité au goût
+            une technique de préparation qui ajoute de la complexité au goût
             avec une texture légère et aérée.
           </p>
           <div data-aos="fade-up" class="grid grid-cols-3 justify-center justify-items-center w-64 mx-auto mt-5">
@@ -223,7 +223,7 @@ export default {
             "Mozzarella",
             "Jambon",
             "Champignons",
-            "Artichauds",
+            "Artichauts",
             "Olives"
 
           ],
