@@ -91,12 +91,12 @@
           </h1>
           <br />
           <p class="font-serif px-5 text-justify">
-            Situé à Bruxelles, <a class="underline decoration-4 decoration-red-400 font-bold hover:opacity-75" href="#">BIGA.KITCHEN</a>
+            Situé à Bruxelles, <a class="font-bold hover:opacity-75" href="#">BIGA.KITCHEN</a>
             est une <span class="font-bold">"ghost kitchen"</span> qui a pour
             projet de livrer des pizzas traditionnelles faites avec un savoir à
             l'italienne. La spécialité de nos pizzas est le <span class="font-bold">biga</span>,
             Une technique de préparation qui ajoute de la compléxité au goût
-            avec une texture légère et aérée. 
+            avec une texture légère et aérée.
           </p>
           <div data-aos="fade-up" class="grid grid-cols-3 justify-center justify-items-center w-64 mx-auto mt-5">
             <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'facebook']" />
@@ -137,7 +137,7 @@
             Merci ! Nous vous gardons informés !
           </h1>
           <h1 class="text-xl pt-8 font-bold mb-2">
-            Horaire d'ouveture
+            Horaires d'ouveture
           </h1>
           <!-- <p class="font-serif px-5 text-center">Nous sommes ouvert les</p> -->
           <!-- <p class="flex flex-wrap  text-white justify-center">
