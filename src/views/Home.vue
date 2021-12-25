@@ -45,8 +45,8 @@
           <h1 class="text-center text-xl mt-3 font-bold">Deliveroo</h1>
         </div>
       </div>
-
-      <div id="menu" class=" mt-3 md:mt-16 min-h-screen">
+      <div id="menu" class=" mb-0 md:mb-16 opacity-0"></div>
+      <div class=" mt-3 md:mt-16 min-h-screen">
         <div class="container max-w-6xl mx-auto pt-24">
           <h1 class="text-lg md:text-4xl bg-red-600 dark:bg-sunset-600 text-white inline px-4 py-2 font-bold font-serif uppercase">
             🍕🍅🌿🧅"à table !"🧅🌿🍅🍕
@@ -83,16 +83,21 @@
           </div>
         </div>
       </div>
-      <div id="infos" class=" mb-0 md:mb-40 opacity-0">
-
-      </div>
+      <div id="infos" class=" mb-0 md:mb-40 opacity-0"></div>
       <div class="bg-red-600 dark:bg-sunset-600 mt-16 pb-8 text-white rounded-none md:rounded-lg shadow-lg">
         <div class="container max-w-6xl mx-auto">
           <h1 class="text-xl md:text-4xl text-white pt-8 font-bold font-serif uppercase">
             "à propos de nous !"
           </h1>
           <br />
-          <p class="font-serif px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="font-serif px-5 text-justify">
+            Situé à Bruxelles, <a class="underline decoration-4 decoration-red-400 font-bold hover:opacity-75" href="#">BIGA.KITCHEN</a>
+            est une <span class="font-bold">"ghost kitchen"</span> qui a pour
+            projet de livrer des pizzas traditionnelles faites avec un savoir à
+            l'italienne. La spécialité de nos pizzas est le <span class="font-bold">biga</span>,
+            Une technique de préparation qui ajoute de la compléxité au goût
+            avec une texture légère et aérée. 
+          </p>
           <div data-aos="fade-up" class="grid grid-cols-3 justify-center justify-items-center w-64 mx-auto mt-5">
             <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'facebook']" />
             <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'twitter']" />
@@ -104,6 +109,7 @@
             Restez informés & recevez des codes PROMO !
           </h1>
           <form
+              v-if="form.status"
               class="mb-2"
               name="contact-speaker"
               method="POST"
@@ -127,6 +133,9 @@
               ENVOYER
             </button>
           </form>
+          <h1 v-else class="text-lg font-bold mb-2 bg-red-900 dark:bg-sunset-900 inline px-3 py-1 rounded-lg">
+            Merci ! Nous vous gardons informés !
+          </h1>
           <h1 class="text-xl pt-8 font-bold mb-2">
             Horaire d'ouveture
           </h1>
@@ -140,7 +149,16 @@
             <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Samedi <br> 17:00 - 22:00 </span>
             <span class="border-4 border-red-200 bg-red-600 text-gray-200 px-2 py-1 m-2 rounded-lg font-semibold">Dimanche <br> Fermé </span>
           </p> -->
-          <p class="text-white text-center">
+          <div class="grid grid-cols-2 max-w-sm mx-auto justify-items-center">
+            <span>Lundi</span> <span class="font-bold">Fermé</span>
+            <span>Mardi</span> <span class="font-bold">17:00 - 22:00</span>
+            <span>Mercredi</span> <span class="font-bold">17:00 - 22:00</span>
+            <span>Jeudi</span> <span class="font-bold">17:00 - 22:00</span>
+            <span>Vendredi</span> <span class="font-bold">17:00 - 22:00</span>
+            <span>Samedi</span> <span class="font-bold">17:00 - 22:00</span>
+            <span>Dimanche</span> <span class="font-bold">Fermé</span>
+          </div>
+          <!-- <p class="text-white text-center">
             <span class="font-semibold">Lundi: Fermé </span><br>
             <span class="font-semibold">Mardi: 17:00 - 22:00 </span><br>
             <span class="font-semibold">Mercredi: 17:00 - 22:00 </span><br>
@@ -148,7 +166,7 @@
             <span class="font-semibold">Vendredi: 17:00 - 22:00 </span><br>
             <span class="font-semibold">Samedi: 17:00 - 22:00 </span><br>
             <span class="font-semibold">Dimanche: Fermé </span><br>
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
@@ -167,7 +185,8 @@ export default {
     return {
       theme: "",
       form: {
-        email: ""
+        email: "",
+        status: true
       },
       shop: {
         status: false,
@@ -245,6 +264,8 @@ export default {
         }),
         axiosConfig
       );
+      this.form.email = "";
+      this.form.status = false
     }
     // getImageUrl(name) {
     //   return new URL(`../assets/${name}.png`, import.meta.url).href

@@ -1,9 +1,9 @@
 <template>
   <div :class="theme === 'light' ? 'pattern-liquid' : 'pattern-liquid-dark'" class="bg-red-600 min-h-screen">
-    <div class="bg-transparent md:bg-yellow-400 md:dark:bg-sunset-700  pt-4 pb-3 shadow-none md:shadow-lg opacity-80 fixed w-full z-50">
+    <div class="bg-transparent md:bg-yellow-400 md:dark:bg-sunset-700  pt-4 pb-3 shadow-none md:shadow-lg opacity-100 md:opacity-80 fixed w-full z-50">
       <div class="container mx-auto max-w-2xl">
-        <div class=" block md:grid grid-cols-2 mx-4 md:mx-0">
-          <div class="kanit leading-tight font-semibold mx-auto">
+        <div class=" block md:flex mx-4 md:mx-0 justify-between">
+          <div class="kanit leading-tight font-semibold">
             <div class="inline-block border-4 border-red-600 py-1 px-2 rounded-lg shadow-lg bg-yellow-400">
               <span class="text-4xl">BIGA</span> <br />
               <span class="text-xl text-red-700">KITCHEN</span>
