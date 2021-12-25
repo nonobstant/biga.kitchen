@@ -30,7 +30,7 @@
       <router-view></router-view>
     </div>
     <div class="w-full bg-red-700 dark:bg-sunset-700 mt-0 md:mt-16">
-      <p class="text-lg text-white font-sans text-center py-4">Made with ❤ by <span class="font-bold">BIGA.KITCHEN</span> <span class="text-sm">© 2022</span> </p>
+      <p class="text-lg text-white font-sans text-center py-4">Fait avec ❤ par <span class="font-bold">BIGA.KITCHEN</span> <span class="text-sm">© 2022</span> </p>
     </div>
 
   </div>
