@@ -1,63 +1,70 @@
 <template>
   <div class="">
-    <div class="homepage mx-auto text-center">
+    <div class="homepage mx-auto text-center pt-24">
       <div class="pt-4"></div>
 
       <div class=" text-center mb-4">
         <img src="../assets/pizza.png" class="w-4/12 mx-auto mt-6" alt="" />
-        <h1 class="inline-block border-b-4 border-black p-5">
-          <span class="font-bold">+32(0) 401 23 45</span> <br />
-          <span v-if="shop.status" class="font-bold text-white text-lg"
-            >Ouvert</span
-          >
-          <span v-else class="font-bold text-black text-lg">Fermé</span>
-          <span v-if="shop.status" class="text-green-500 font-bold text-xl">
-            ●
-            <span class="text-white text-xl font-semibold"
-              >Ferme à 22:00</span
-            ></span
-          >
-          <span v-else class="text-red-500 font-bold text-2xl">
-            ●
-            <span class="text-white text-xl font-semibold"
-              >Ouvre à 17:00</span
-            ></span
-          >
+        <h1 class="inline-block p-5 text-white">
+          <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+          <span class="font-bold">04 01 23 45 67</span> <br />
+          <span class="font-bold">+32 401 23 45 67</span>
+          <div class=" bg-green-700 dark:bg-sunset-700 pt-px pb-1 px-2 rounded-lg mt-2 border-4 border-green-300 dark:border-sunset-300 shadow-lg">
+            <span v-if="shop.status" class="font-bold text-white text-lg"
+              >Ouvert</span
+            >
+            <span v-else class="font-bold text-red-400 text-lg">Fermé</span>
+            <span v-if="shop.status" class="text-green-400 font-bold text-2xl">
+              <svg class="w-6 h-6 inline mx-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-white text-xl font-semibold"
+                >ferme à 22:00</span
+              ></span
+            >
+            <span v-else class="text-red-400 font-bold text-2xl">
+              <svg class="w-6 h-6 inline mx-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+              <span class="text-white text-xl font-semibold"
+                >ouvre à 17:00</span
+              ></span
+            >
+          </div>
+
         </h1>
       </div>
-      <div class="block md:grid grid-cols-3 container max-w-6xl mx-auto gap-0 md:gap-8">
-        <div data-aos="fade-up" data-aos-duration="1000"  class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg uber border-8">
+      <div data-aos="flip-up" data-aos-duration="1000" class="block md:grid grid-cols-3 container max-w-6xl mx-auto gap-0 md:gap-8">
+        <div  class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white dark:bg-sunset-600 p-6 rounded-lg shadow-lg uber border-8">
           <img src="../assets/uber.png" class="w-auto md:w-40 mx-auto" alt="" />
         </div>
-        <div data-aos="fade-down" data-aos-duration="1000" class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg border-8 border-yellow-300 hover:border-yellow-400">
+        <div class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white dark:bg-sunset-600 p-6 rounded-lg shadow-lg border-8 border-yellow-300 hover:border-yellow-600">
           <img src="../assets/takeaway.svg" class="w-1/2 md:w-20 mx-auto" alt="" />
           <h1 class="text-center text-xl mt-3 font-bold">TakeAway</h1>
         </div>
-        <div data-aos="fade-up" data-aos-duration="1000" class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white p-6 rounded-lg shadow-lg border-8 border-green-300 hover:border-green-400">
+        <div class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white dark:bg-sunset-600 p-6 rounded-lg shadow-lg border-8 border-green-300 hover:border-green-600">
           <img src="../assets/deliveroo.png" class="w-1/2 md:w-20 mx-auto" alt="" />
           <h1 class="text-center text-xl mt-3 font-bold">Deliveroo</h1>
         </div>
       </div>
 
       <div id="menu" class=" mt-3 md:mt-16 min-h-screen">
-        <div class="container max-w-6xl mx-auto">
-          <h1 class="text-lg md:text-4xl text-white pt-24 font-bold font-serif uppercase">
+        <div class="container max-w-6xl mx-auto pt-24">
+          <h1 class="text-lg md:text-4xl bg-red-600 dark:bg-sunset-600 text-white inline px-4 py-2 font-bold font-serif uppercase">
             🍕🍅🌿🧅"à table !"🧅🌿🍅🍕
           </h1>
           <br />
         </div>
         <div class="mx-auto mt-6 px-4 md:px-0">
-          <div :data-aos-delay="index*300" data-aos="flip-up" data-aos-duration="1000" v-for="(pizza, index) in menu" v-bind:key="index" class=" mb-6">
+          <div :data-aos-delay="index*200" data-aos="flip-up" data-aos-duration="1000" v-for="(pizza, index) in menu" v-bind:key="index" class=" mb-6">
             <div class="bg-white w-full pb-5 md:pb-0 h-full md:h-48 text-left shadow-lg relative">
               <img
                 v-if="isOdd(index)"
-                class="w-full h-auto md:w-auto md:h-48 float-none md:float-right"
+                class="w-full h-auto md:w-auto md:h-48 float-none md:float-right brightness-125"
                 :src="pizza.img"
                 alt=""
               />
               <img
                 v-if="!isOdd(index)"
-                class="w-full h-auto md:w-auto md:h-48 float-none md:float-left"
+                class="w-full h-auto md:w-auto md:h-48 float-none md:float-left brightness-125"
                 :src="pizza.img"
                 alt=""
               />
@@ -76,8 +83,10 @@
           </div>
         </div>
       </div>
+      <div id="infos" class=" mb-0 md:mb-40 opacity-0">
 
-      <div id="infos" class="bg-red-800 mt-16 pb-5 text-white rounded-none md:rounded-lg shadow-lg">
+      </div>
+      <div class="bg-red-600 dark:bg-sunset-600 mt-16 pb-8 text-white rounded-none md:rounded-lg shadow-lg">
         <div class="container max-w-6xl mx-auto">
           <h1 class="text-xl md:text-4xl text-white pt-8 font-bold font-serif uppercase">
             "à propos de nous !"
@@ -92,9 +101,10 @@
           </div>
           <br>
           <h1 class="text-xl pt-8 font-bold mb-6">
-            Restez informés & recevez des codes PROMO
+            Restez informés & recevez des codes PROMO !
           </h1>
           <form
+              class="mb-2"
               name="contact-speaker"
               method="POST"
               data-netlify="true"
@@ -102,7 +112,7 @@
               @submit.prevent="handleSubmit"
             >
             <input
-              class="px-3 py-1 bg-red-900 outline-none text-base md:text-xl font-bold"
+              class="mx-2 px-3 py-1 bg-red-900 dark:bg-sunset-900 outline-none text-base md:text-xl font-bold rounded-lg focus:outline-none focus:ring focus:ring-red-400 dark:focus:ring-sunset-400"
               type="text"
               name="email"
               v-model="form.email"
@@ -110,13 +120,35 @@
               placeholder="example@mail.com"
             />
             <button
-              class="border-l-4 border-white px-3 py-1 bg-red-900 outline-none text-base md:text-xl font-bold cursor-pointer hover:opacity-75"
+              class="px-3 py-1 bg-red-900 dark:bg-sunset-900 outline-none text-base md:text-xl font-bold cursor-pointer hover:opacity-75 rounded-lg"
               type="submit"
               name="button"
             >
               ENVOYER
             </button>
           </form>
+          <h1 class="text-xl pt-8 font-bold mb-2">
+            Horaire d'ouveture
+          </h1>
+          <!-- <p class="font-serif px-5 text-center">Nous sommes ouvert les</p> -->
+          <!-- <p class="flex flex-wrap  text-white justify-center">
+            <span class="border-4 border-red-200 bg-red-600 text-gray-200 px-2 py-1 m-2 rounded-lg font-semibold">Lundi <br> Fermé </span>
+            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Mardi <br> 17:00 - 22:00 </span>
+            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Mercredi <br> 17:00 - 22:00 </span>
+            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Jeudi <br> 17:00 - 22:00 </span>
+            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Vendredi <br> 17:00 - 22:00 </span>
+            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Samedi <br> 17:00 - 22:00 </span>
+            <span class="border-4 border-red-200 bg-red-600 text-gray-200 px-2 py-1 m-2 rounded-lg font-semibold">Dimanche <br> Fermé </span>
+          </p> -->
+          <p class="text-white text-center">
+            <span class="font-semibold">Lundi: Fermé </span><br>
+            <span class="font-semibold">Mardi: 17:00 - 22:00 </span><br>
+            <span class="font-semibold">Mercredi: 17:00 - 22:00 </span><br>
+            <span class="font-semibold">Jeudi: 17:00 - 22:00 </span><br>
+            <span class="font-semibold">Vendredi: 17:00 - 22:00 </span><br>
+            <span class="font-semibold">Samedi: 17:00 - 22:00 </span><br>
+            <span class="font-semibold">Dimanche: Fermé </span><br>
+          </p>
         </div>
       </div>
     </div>
@@ -133,6 +165,7 @@ export default {
   name: "homepage",
   data() {
     return {
+      theme: "",
       form: {
         email: ""
       },
@@ -182,6 +215,14 @@ export default {
     };
   },
   methods: {
+    themeLight() {
+      document.documentElement.classList.remove("dark");
+      this.theme = "light";
+    },
+    themeDark() {
+      document.documentElement.classList.add("dark");
+      this.theme = "dark";
+    },
     isOdd(num) {
       return num % 2;
     },
@@ -214,8 +255,16 @@ export default {
     var hour = time.getUTCHours();
     if (hour >= this.shop.time_start && hour <= this.shop.time_stop) {
       this.shop.status = true;
+      this.theme = "light"
     } else {
       this.shop.status = false;
+      this.theme = "dark"
+    }
+
+    if (this.theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }
 };
@@ -232,6 +281,6 @@ export default {
   border-color: #5FB70A91;
 }
 .uber:hover {
-  border-color: #5FB70AB0;
+  border-color: #5FB70AD9;
 }
 </style>
