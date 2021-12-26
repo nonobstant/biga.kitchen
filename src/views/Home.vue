@@ -77,8 +77,8 @@
               <p class="flex flex-wrap">
                 <span v-for="(item, index) in pizza.items" v-bind:key="index" class="bg-green-200 px-2 py-1 m-2 rounded-lg font-semibold font-serif float-none md:float-left">{{ item }}</span>
               </p>
-              <p v-if="isOdd(index)" class="absolute top-0 md:top-auto md:bottom-0 right-0 text-2xl font-bold px-2 py-1 bg-green-600 text-white m-3 font-mono border-4 border-white">{{ pizza.price }}</p>
-              <p v-if="!isOdd(index)" class="absolute top-0 md:top-auto md:bottom-0 left-0 text-2xl font-bold px-2 py-1 bg-green-600 text-white m-3 font-mono border-4 border-white">{{ pizza.price }}</p>
+              <p v-if="isOdd(index)" class="absolute top-0 md:top-auto md:bottom-0 right-0 text-2xl font-bold px-2 py-1 bg-green-600 text-white m-3 font-mono border-4 border-green-300">{{ pizza.price }}</p>
+              <p v-if="!isOdd(index)" class="absolute top-0 md:top-auto md:bottom-0 left-0 text-2xl font-bold px-2 py-1 bg-green-600 text-white m-3 font-mono border-4 border-green-300">{{ pizza.price }}</p>
             </div>
           </div>
         </div>

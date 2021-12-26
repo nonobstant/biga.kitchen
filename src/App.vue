@@ -1,6 +1,6 @@
 <template>
   <div :class="theme === 'light' ? 'pattern-liquid' : 'pattern-liquid-dark'" class="bg-red-600 min-h-screen">
-    <div class="bg-transparent md:bg-yellow-400 md:dark:bg-sunset-700  pt-4 pb-3 shadow-none md:shadow-lg opacity-100 md:opacity-80 fixed w-full z-50">
+    <div class="bg-transparent  pt-4 pb-3 fixed w-full z-50">
       <div class="container mx-auto max-w-2xl">
         <div class=" block md:flex mx-4 md:mx-0 justify-between">
           <div class="kanit leading-tight font-semibold">
@@ -11,9 +11,11 @@
 
           </div>
           <div class="hidden md:block text-center font-bold text-lg text-black dark:text-white inline-block pt-6">
-            <a data-aos-easing="ease" class="inline no-underline decoration-4 dark:decoration-sunset-600 decoration-red-600 mx-2 hover:underline" href="#menu">MENU</a>
-            <a class="inline no-underline decoration-4 dark:decoration-sunset-600 decoration-red-600 mx-2 hover:underline" href="#">YOKAI KITCHEN</a>
-            <a class="inline no-underline decoration-4 dark:decoration-sunset-600 decoration-red-600 mx-2 hover:underline" href="#infos">INFOS</a>
+            <div class="bg-yellow-400 dark:bg-sunset-700 px-4 py-2 shadow-lg">
+              <a data-aos-easing="ease" class="inline no-underline decoration-4 dark:decoration-sunset-300 decoration-red-600 mx-2 hover:underline" href="#menu">MENU</a>
+              <a class="inline no-underline decoration-4 dark:decoration-sunset-300 decoration-red-600 mx-2 hover:underline" href="#">YOKAI KITCHEN</a>
+              <a class="inline no-underline decoration-4 dark:decoration-sunset-300 decoration-red-600 mx-2 hover:underline" href="#infos">INFOS</a>
+            </div>
           </div>
           <!-- <div class="block md:hidden text-right pt-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 inline text-black fill-current bg-red-600 cursor-pointer rounded-lg p-2 border-4 border-red-300 hover:border-red-400" viewBox="0 0 20 20" fill="currentColor">
