@@ -1,7 +1,6 @@
 <template>
   <div class="">
-    <div class="homepage mx-auto text-center pt-24">
-      <div class="pt-4"></div>
+    <div class="homepage mx-auto text-center">
 
       <div class=" text-center mb-4">
         <img src="../assets/pizza.png" class="w-4/12 mx-auto mt-6" alt="" />
@@ -25,7 +24,7 @@
             <span v-else class="text-red-400 font-bold text-2xl">
               <svg class="w-6 h-6 inline mx-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
               <span class="text-white text-xl font-semibold"
-                >ouvre à 17:00</span
+                >ouvre <span v-if="shop.closed_day">{{ shop.open }}</span> à 17:00</span
               ></span
             >
           </div>
@@ -45,15 +44,14 @@
           <h1 class="text-center text-xl mt-3 font-bold">Deliveroo</h1>
         </div>
       </div>
-      <div id="menu" class=" mb-0 md:mb-16 opacity-0"></div>
-      <div class=" mt-3 md:mt-16 min-h-screen">
+      <div id="menu" class=" mt-3 md:mt-16 min-h-screen">
         <div class="container max-w-6xl mx-auto pt-24">
           <h1 class="text-lg md:text-4xl bg-red-600 dark:bg-sunset-600 text-white inline px-4 py-2 font-bold font-serif uppercase">
             🍕🍅🌿🧅"à table !"🧅🌿🍅🍕
           </h1>
           <br />
         </div>
-        <div class="mx-auto mt-6 px-4 md:px-0">
+        <!-- <div class="mx-auto mt-6 px-4 md:px-0">
           <div :data-aos-delay="index*200" data-aos="flip-up" data-aos-duration="1000" v-for="(pizza, index) in menu" v-bind:key="index" class=" mb-6">
             <div class="bg-white w-full pb-5 md:pb-0 h-full md:h-48 text-left shadow-lg relative">
               <img
@@ -81,10 +79,44 @@
               <p v-if="!isOdd(index)" class="absolute top-0 md:top-auto md:bottom-0 left-0 text-2xl font-bold px-2 py-1 bg-green-600 text-white m-3 font-mono border-4 border-green-300">{{ pizza.price }}</p>
             </div>
           </div>
+        </div> -->
+        <div class="mx-auto mt-12 px-4 md:px-0">
+          <div v-for="(pizza, index) in menu" v-bind:key="index" class=" mb-16">
+            <div class="bg-white w-full pb-16 md:pb-0 h-full md:h-48 text-left shadow-lg relative rounded-lg">
+              <img
+                v-if="isOdd(index)"
+                class="transform translate-x-0 md:-translate-y-1.5 md:translate-x-1 w-full shadow-lg h-auto md:w-auto md:h-52 float-none md:float-right brightness-125 rounded-lg"
+                :src="pizza.img"
+                alt=""
+              />
+              <img
+                v-if="!isOdd(index)"
+                class="transform translate-x-0 md:-translate-y-1.5 md:-translate-x-1 w-full shadow-lg h-auto md:w-auto md:h-52 float-none md:float-left brightness-125 rounded-lg"
+                :src="pizza.img"
+                alt=""
+              />
+              <p
+                v-if="isOdd(index)"
+                class="pt-3 text-3xl text-green-900 font-semibold border-green-600 border-b-2 border-dashed pb-3 text-left px-3 petpet"
+              >
+                {{ pizza.name }}
+              </p>
+              <p
+                v-if="!isOdd(index)"
+                class="pt-3 text-3xl text-green-900 font-semibold border-green-600 border-b-2 border-dashed pb-1 text-right px-3 petpet"
+              >
+                {{ pizza.name }}
+              </p>
+              <p class="flex flex-wrap mt-2">
+                <span v-for="(item, index) in pizza.items" v-bind:key="index" class="bg-green-200 text-green-900 text-sm px-2 py-1 m-1 rounded-lg font-semibold font-serif float-none md:float-left">{{ item }}</span>
+              </p>
+              <p v-if="isOdd(index)" class="absolute bottom-0 left-0 text-2xl font-bold px-2 py-1 text-green-900 m-2 border-2 border-dashed border-green-400 rounded-lg">{{ pizza.price }}</p>
+              <p v-if="!isOdd(index)" class="absolute bottom-0 right-0 text-2xl font-bold px-2 py-1 text-green-900 m-2 border-2 border-dashed border-green-400 rounded-lg">{{ pizza.price }}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="infos" class=" mb-0 md:mb-40 opacity-0"></div>
-      <div class="bg-red-600 dark:bg-sunset-600 mt-16 pb-8 text-white rounded-none md:rounded-lg shadow-lg">
+      <div id="infos" class="bg-red-600 dark:bg-sunset-600 mt-16 pb-8 text-white rounded-none md:rounded-lg shadow-lg">
         <div class="container max-w-6xl mx-auto">
           <h1 class="text-xl md:text-4xl text-white pt-8 font-bold font-serif uppercase">
             "à propos de nous !"
@@ -98,10 +130,10 @@
             une technique de préparation qui ajoute de la complexité au goût
             avec une texture légère et aérée.
           </p>
-          <div data-aos="fade-up" class="grid grid-cols-3 justify-center justify-items-center w-64 mx-auto mt-5">
-            <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'facebook']" />
-            <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'twitter']" />
-            <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'instagram']" />
+          <div data-aos="fade-up" class="grid grid-cols-2 justify-center justify-items-center w-64 mx-auto mt-5">
+            <!-- <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'facebook']" /> -->
+            <font-awesome-icon @click='link("")' class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'twitter']" />
+            <font-awesome-icon @click='link("https://www.instagram.com/biga.kitchen_")' class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'instagram']" />
 
           </div>
           <br>
@@ -192,8 +224,10 @@ export default {
         status: false,
         time_start: 15,
         time_stop: 20,
-        day_start: 1,
-        day_stop: 5
+        day_start: 2,
+        day_stop: 6,
+        closed_day: false,
+        open:""
       },
       menu : [
         {
@@ -203,7 +237,7 @@ export default {
             "Ail",
             "Basilic"
           ],
-          price : "7.00 EUR",
+          price : "7,00 €",
           img: marinara
         },
         {
@@ -213,7 +247,7 @@ export default {
             "Mozzarella",
             "Basilic"
           ],
-          price : "8.00 EUR",
+          price : "8,00 €",
           img: margherita
         },
         {
@@ -227,13 +261,16 @@ export default {
             "Olives"
 
           ],
-          price: "10.00 EUR",
+          price: "10,00 €",
           img: marinara
         }
       ]
     };
   },
   methods: {
+    link(data) {
+      window.open(data, "_blank");
+    },
     themeLight() {
       document.documentElement.classList.remove("dark");
       this.theme = "light";
@@ -274,10 +311,16 @@ export default {
   mounted() {
     var time = new Date();
     var hour = time.getUTCHours();
-    if (hour >= this.shop.time_start && hour <= this.shop.time_stop) {
+    var day = time.getDay();
+    if (hour >= this.shop.time_start && hour <= this.shop.time_stop && day >= this.shop.day_start && day <= this.shop.day_stop) {
       this.shop.status = true;
       this.theme = "light"
     } else {
+      console.log(day)
+      if( day === 1 || day === 0){
+        this.shop.open = "mardi"
+        this.shop.closed_day = true
+      }
       this.shop.status = false;
       this.theme = "dark"
     }
