@@ -31,7 +31,7 @@
 
         </h1>
       </div>
-      <div data-aos="flip-up" data-aos-duration="1000" class="block md:grid grid-cols-3 container max-w-6xl mx-auto gap-0 md:gap-8">
+      <div class="block md:grid grid-cols-3 container max-w-6xl mx-auto gap-0 md:gap-8">
         <div  class="mx-20 md:mx-0 mb-2 cursor-pointer bg-white dark:bg-sunset-600 p-6 rounded-lg shadow-lg uber border-8">
           <img src="../assets/uber.png" class="w-auto md:w-40 mx-auto" alt="" />
         </div>
@@ -51,35 +51,6 @@
           </h1>
           <br />
         </div>
-        <!-- <div class="mx-auto mt-6 px-4 md:px-0">
-          <div :data-aos-delay="index*200" data-aos="flip-up" data-aos-duration="1000" v-for="(pizza, index) in menu" v-bind:key="index" class=" mb-6">
-            <div class="bg-white w-full pb-5 md:pb-0 h-full md:h-48 text-left shadow-lg relative">
-              <img
-                v-if="isOdd(index)"
-                class="w-full h-auto md:w-auto md:h-48 float-none md:float-right brightness-125"
-                :src="pizza.img"
-                alt=""
-              />
-              <img
-                v-if="!isOdd(index)"
-                class="w-full h-auto md:w-auto md:h-48 float-none md:float-left brightness-125"
-                :src="pizza.img"
-                alt=""
-              />
-              <p
-                class="pt-3 text-3xl text-green-600 font-semibold border-green-600 border-b-2 border-dashed pb-3 text-center petpet"
-              >
-                {{ pizza.name }}
-              </p>
-              <br />
-              <p class="flex flex-wrap">
-                <span v-for="(item, index) in pizza.items" v-bind:key="index" class="bg-green-200 px-2 py-1 m-2 rounded-lg font-semibold font-serif float-none md:float-left">{{ item }}</span>
-              </p>
-              <p v-if="isOdd(index)" class="absolute top-0 md:top-auto md:bottom-0 right-0 text-2xl font-bold px-2 py-1 bg-green-600 text-white m-3 font-mono border-4 border-green-300">{{ pizza.price }}</p>
-              <p v-if="!isOdd(index)" class="absolute top-0 md:top-auto md:bottom-0 left-0 text-2xl font-bold px-2 py-1 bg-green-600 text-white m-3 font-mono border-4 border-green-300">{{ pizza.price }}</p>
-            </div>
-          </div>
-        </div> -->
         <div class="mx-auto mt-12 px-4 md:px-0">
           <div v-for="(pizza, index) in menu" v-bind:key="index" class=" mb-16">
             <div class="bg-white w-full pb-16 md:pb-0 h-full md:h-48 text-left shadow-lg relative rounded-lg">
@@ -130,7 +101,7 @@
             une technique de préparation qui ajoute de la complexité au goût
             avec une texture légère et aérée.
           </p>
-          <div data-aos="fade-up" class="grid grid-cols-2 justify-center justify-items-center w-64 mx-auto mt-5">
+          <div class="grid grid-cols-2 justify-center justify-items-center w-64 mx-auto mt-5">
             <!-- <font-awesome-icon class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'facebook']" /> -->
             <font-awesome-icon @click='link("")' class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'twitter']" />
             <font-awesome-icon @click='link("https://www.instagram.com/biga.kitchen_")' class="fill-current text-white hover:text-red-300 cursor-pointer" size="3x" :icon="['fab', 'instagram']" />
@@ -171,16 +142,6 @@
           <h1 class="text-xl pt-8 font-bold mb-2">
             Horaires d'ouveture
           </h1>
-          <!-- <p class="font-serif px-5 text-center">Nous sommes ouvert les</p> -->
-          <!-- <p class="flex flex-wrap  text-white justify-center">
-            <span class="border-4 border-red-200 bg-red-600 text-gray-200 px-2 py-1 m-2 rounded-lg font-semibold">Lundi <br> Fermé </span>
-            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Mardi <br> 17:00 - 22:00 </span>
-            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Mercredi <br> 17:00 - 22:00 </span>
-            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Jeudi <br> 17:00 - 22:00 </span>
-            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Vendredi <br> 17:00 - 22:00 </span>
-            <span class="border-4 border-green-200 bg-green-600 px-2 py-1 m-2 rounded-lg font-semibold">Samedi <br> 17:00 - 22:00 </span>
-            <span class="border-4 border-red-200 bg-red-600 text-gray-200 px-2 py-1 m-2 rounded-lg font-semibold">Dimanche <br> Fermé </span>
-          </p> -->
           <div class="grid grid-cols-2 max-w-sm mx-auto justify-items-center">
             <span>Lundi</span> <span class="font-bold">Fermé</span>
             <span>Mardi</span> <span class="font-bold">17:00 - 22:00</span>
@@ -190,15 +151,6 @@
             <span>Samedi</span> <span class="font-bold">17:00 - 22:00</span>
             <span>Dimanche</span> <span class="font-bold">Fermé</span>
           </div>
-          <!-- <p class="text-white text-center">
-            <span class="font-semibold">Lundi: Fermé </span><br>
-            <span class="font-semibold">Mardi: 17:00 - 22:00 </span><br>
-            <span class="font-semibold">Mercredi: 17:00 - 22:00 </span><br>
-            <span class="font-semibold">Jeudi: 17:00 - 22:00 </span><br>
-            <span class="font-semibold">Vendredi: 17:00 - 22:00 </span><br>
-            <span class="font-semibold">Samedi: 17:00 - 22:00 </span><br>
-            <span class="font-semibold">Dimanche: Fermé </span><br>
-          </p> -->
         </div>
       </div>
     </div>
@@ -212,7 +164,6 @@ import marinara from '../assets/marinara.png'
 import margherita from '../assets/margheritta.png'
 
 export default {
-  name: "homepage",
   data() {
     return {
       theme: "",
@@ -238,7 +189,7 @@ export default {
             "Basilic"
           ],
           price : "7,00 €",
-          img: marinara
+          img: "/src/assets/marinara.png"
         },
         {
           name: "Margherita",
@@ -271,14 +222,6 @@ export default {
     link(data) {
       window.open(data, "_blank");
     },
-    themeLight() {
-      document.documentElement.classList.remove("dark");
-      this.theme = "light";
-    },
-    themeDark() {
-      document.documentElement.classList.add("dark");
-      this.theme = "dark";
-    },
     isOdd(num) {
       return num % 2;
     },
@@ -309,6 +252,7 @@ export default {
     // }
   },
   mounted() {
+    console.log(this.menu[0].img)
     var time = new Date();
     var hour = time.getUTCHours();
     var day = time.getDay();
@@ -345,6 +289,6 @@ export default {
   border-color: #5FB70A91;
 }
 .uber:hover {
-  border-color: #5FB70AD9;
+  border-color: #438a00e8;
 }
 </style>

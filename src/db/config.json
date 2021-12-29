@@ -1,0 +1,9 @@
+{
+    "status" : false,
+    "day_start": 1,
+    "day_stop": 5,
+    "time_start": 15,
+    "time_stop": 20,
+    "closed_days": false,
+    "open": "mardi"
+}

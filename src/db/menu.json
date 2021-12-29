@@ -1,0 +1,39 @@
+{
+    "menu" : [
+    {
+      "name": "Marinara",
+      "items": [
+        "Tomate",
+        "Ail",
+        "Basilic"
+      ],
+      "price" : "7,00 €",
+      "img": "/src/assets/marinara.png"
+    },
+    {
+      "name": "Margherita",
+      "items": [
+        "Tomate",
+        "Mozzarella",
+        "Basilic"
+      ],
+      "price" : "8,00 €",
+      "img": "/src/assets/margheritta.png"
+    },
+    {
+      "name": "Capricciosa",
+      "items": [
+        "Tomate",
+        "Mozzarella",
+        "Jambon",
+        "Champignons",
+        "Artichauts",
+        "Olives"
+
+      ],
+      "price": "10,00 €",
+      "img": "/src/assets/marinara.png"
+    }
+  ]
+
+}

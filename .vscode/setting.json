@@ -1,0 +1,4 @@
+"tailwindCSS.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html",
+  }
