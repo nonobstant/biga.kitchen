@@ -46,6 +46,8 @@
 <script>
 
 import dataJSON from "@/db/menu.json"
+import marinaraIMG from "@/assets/marinara.png"
+import margheritaIMG from "@/assets/margherita.png"
 
 export default {
     name: "menu",

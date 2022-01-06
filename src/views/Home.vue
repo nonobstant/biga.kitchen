@@ -161,7 +161,7 @@
 import axios from "axios";
 
 import marinara from '../assets/marinara.png'
-import margherita from '../assets/margheritta.png'
+import margherita from '../assets/margherita.png'
 
 export default {
   data() {

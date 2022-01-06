@@ -8,7 +8,7 @@
         "Basilic"
       ],
       "price" : "7,00 €",
-      "img": "/src/assets/marinara.png"
+      "img": "./src/assets/marinara.png"
     },
     {
       "name": "Margherita",
@@ -18,7 +18,7 @@
         "Basilic"
       ],
       "price" : "8,00 €",
-      "img": "/src/assets/margheritta.png"
+      "img": "./src/assets/margherita.png"
     },
     {
       "name": "Capricciosa",
@@ -32,7 +32,7 @@
 
       ],
       "price": "10,00 €",
-      "img": "/src/assets/marinara.png"
+      "img": "./src/assets/marinara.png"
     }
   ]
 
