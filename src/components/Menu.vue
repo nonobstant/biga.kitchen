@@ -12,13 +12,13 @@
               <img
                 v-if="isOdd(index)"
                 class="transform translate-x-0 md:-translate-y-1.5 md:translate-x-1 w-full shadow-lg h-auto md:w-auto md:h-52 float-none md:float-right brightness-125 rounded-lg"
-                :src="pizza.img"
+                :src='pizza.img'
                 alt=""
               />
               <img
                 v-if="!isOdd(index)"
                 class="transform translate-x-0 md:-translate-y-1.5 md:-translate-x-1 w-full shadow-lg h-auto md:w-auto md:h-52 float-none md:float-left brightness-125 rounded-lg"
-                :src="pizza.img"
+                :src='pizza.img'
                 alt=""
               />
               <p
@@ -44,13 +44,11 @@
       </div>
 </template>
 <script>
-
 import dataJSON from "@/db/menu.json"
-import marinaraIMG from "@/assets/marinara.png"
-import margheritaIMG from "@/assets/margherita.png"
 
 export default {
     name: "menu",
+    //plugins: [vitePluginRequire({}),],
     data(){
         return {
             menu : dataJSON.menu
@@ -60,6 +58,12 @@ export default {
         isOdd(num) {
             return num % 2;
         }
+    }, 
+    mounted(){
+      this.menu.forEach(pizza => {
+        // import marinara from '../assets/marinara.png'
+        // pizza.img = 
+      });
     }
     
 }

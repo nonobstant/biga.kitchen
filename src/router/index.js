@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory} from 'vue-router'
 //Views
-import Home from '@/views/Home.vue'
-// import lab from '@/views/lab.vue'
+//import Home from '@/views/Home.vue'
+import Wait from '@/views/ComingSoon.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'wait',
+    component: Wait
   },
   // {
   //   path: '/lab',
